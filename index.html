@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>لعبة الثعبان</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800;900&display=swap" rel="stylesheet" />
+    <meta property="og:image" content="https://bolt.new/static/og_default.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://bolt.new/static/og_default.png">
+</head>
+  <body>
+    <div id="app">
+      <div class="game-wrapper">
+        <div class="game-header">
+          <h1 class="game-title">لعبة الثعبان</h1>
+          <p class="game-subtitle">كل الطعام و تجنّب الاصطدام بنفسك — الجدران تعبر من الجهة الأخرى</p>
+        </div>
+        <div class="scores">
+          <div class="score-card">
+            <div class="score-label">النقاط</div>
+            <div class="score-value current" id="score">0</div>
+          </div>
+          <div class="score-card">
+            <div class="score-label">أعلى نتيجة</div>
+            <div class="score-value best" id="best-score">0</div>
+          </div>
+        </div>
+        <div class="canvas-container">
+          <canvas id="game-canvas" width="400" height="400"></canvas>
+          <div class="overlay" id="overlay-start">
+            <div class="overlay-title">ابدأ اللعب</div>
+            <div class="overlay-text">استخدم مفاتيح الأسهم أو الحركة على الشاشة للتحكم بالثعبان</div>
+            <button class="btn" id="btn-start">ابدأ</button>
+          </div>
+          <div class="overlay hidden" id="overlay-over">
+            <div class="overlay-icon">🐍</div>
+            <div class="overlay-title">انتهت اللعبة</div>
+            <div class="overlay-score" id="final-score">0</div>
+            <div class="btn-row">
+              <button class="btn" id="btn-restart">إعادة</button>
+            </div>
+          </div>
+          <div class="overlay hidden" id="overlay-pause">
+            <div class="overlay-title">إيقاف مؤقت</div>
+            <button class="btn" id="btn-resume">متابعة</button>
+          </div>
+        </div>
+        <div class="controls-hint">
+          <span class="kbd">↑</span><span class="kbd">↓</span><span class="kbd">←</span><span class="kbd">→</span>
+          <span>للتحكم</span>
+          <span style="margin: 0 8px">|</span>
+          <span class="kbd">مسافة</span>
+          <span>للإيقاف المؤقت</span>
+        </div>
+        <div class="dpad">
+          <div class="dpad-btn dpad-up" data-dir="up">▲</div>
+          <div class="dpad-btn dpad-left" data-dir="left">◀</div>
+          <div class="dpad-btn dpad-right" data-dir="right">▶</div>
+          <div class="dpad-btn dpad-down" data-dir="down">▼</div>
+        </div>
+      </div>
+    </div>
+    <script src="game.js"></script>
+  </body>
+</html>

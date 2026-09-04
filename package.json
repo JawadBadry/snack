@@ -1,0 +1,8 @@
+{
+  "name": "snake-game",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build": "node -e \"['index.html','style.css','game.js'].forEach(f=>require('fs').accessSync(f))\""
+  }
+}
